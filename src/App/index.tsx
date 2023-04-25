@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material';
-import CharacterCard from './components/CharacterCard';
 import characterService from './components/CharacterCard/service/CharacterService';
 import { CharacterType } from './types';
+import AgentsPage from './AgentsPage';
 
 function App() {
   const [agents, setAgents] = useState<CharacterType[]>([]);
@@ -29,8 +29,8 @@ function App() {
   return (
     <div className="App">
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static" sx={{backgroundColor: '#042e27'}}>
-          <Toolbar>
+        <AppBar position="static" sx={{backgroundColor: '#ece8e1'}}>
+          <Toolbar style={{backgroundColor:'#111'}}>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1}}>
               VALORANT 
             </Typography>
@@ -38,20 +38,7 @@ function App() {
         </AppBar>
       </Box>
 
-      <div style={{
-        display:'flex',
-        flexDirection:'row',
-        flexWrap:'wrap'
-      }}>
-
-      {agents.length > 0 ? agents.map((agent: CharacterType, key) => (
-              <CharacterCard  key={key} agent={agent}></CharacterCard>
-            ))
-            : ''
-            }
-      </div>
-
-    
+      <AgentsPage></AgentsPage>    
     
     </div>
   );
