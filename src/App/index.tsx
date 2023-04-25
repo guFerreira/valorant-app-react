@@ -11,7 +11,6 @@ function App() {
     const loadAgents = async () => {
       try {
         const loadAgents:CharacterType[] = await characterService.getAllAgents()
-        console.log('loadAgents',loadAgents)
         setAgents(loadAgents)
       } catch (error : any) {
         console.log(error)

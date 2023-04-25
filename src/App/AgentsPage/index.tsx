@@ -10,7 +10,6 @@ function AgentsPage() {
     const loadAgents = async () => {
       try {
         const loadAgents:CharacterType[] = await characterService.getAllAgents()
-        console.log('loadAgents',loadAgents)
         setAgents(loadAgents)
       } catch (error : any) {
         console.log(error)
@@ -35,6 +34,7 @@ function AgentsPage() {
 
         { agents.length > 0 ? agents.map((agent: CharacterType, key) => (
               <CharacterCard  key={key} agent={agent}></CharacterCard>
+              
             ))
             : ''
         }
