@@ -7,8 +7,6 @@ const api = axios.create({
 
 async function getAllAgents():Promise<CharacterType[]> {
   const response = await api.get<{status:number, data: CharacterType[]}>('/v1/agents')
-  console.log('service:', response.data.data)
-
   const characters = response.data.data
 
   return characters.filter((character) =>{

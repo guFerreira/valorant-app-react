@@ -39,7 +39,8 @@ const CharacterCard = (agentProp:AgentProp) => {
     bgcolor: 'background.paper',
     boxShadow: 24,
     display:'flex',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    outline: 'none'
   };
   
 
