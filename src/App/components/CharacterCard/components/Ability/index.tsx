@@ -8,9 +8,10 @@ interface AbilityProp {
 
 const Ability = (abilityProp:AbilityProp) => {
   const ability = abilityProp.ability;
-  const teste = () => {
+  const selectAbility = () => {
     abilityProp.selectAbility(ability)
   }
+  
   return (
     <div style={{
         display:'flex',
@@ -22,7 +23,7 @@ const Ability = (abilityProp:AbilityProp) => {
         borderRadius:'12px',
         cursor:'pointer'
       }}
-      onClick={() =>{teste() }}>
+      onClick={() =>{selectAbility() }}>
         <img src={ability.displayIcon} style={{
           height:'54px',
         }}/>
